@@ -57,9 +57,9 @@ export default function Categories() {
             <View
             style={{
                 alignItems:'center',
-                marginRight:6,
+                marginRight:10,
                 
-                marginLeft:5,
+                marginLeft:10,
                 borderRadius: 10,
                 padding: 10,
                 marginTop: 10,
@@ -79,26 +79,22 @@ export default function Categories() {
             <TouchableOpacity
                 onPress={()=>{setCategory(item.text)}}
                 style={{
-                    //backgroundColor: (category===item.text)? '#465bd8':'white',
+                    backgroundColor: (category===item.text)? 'black':'white',
                     borderRadius:20,
-                    paddingVertical: 6,
                     opacity:0.8,
+                    paddingVertical: 6,
                     paddingHorizontal: 16,
                 }}
             >
             <Text
                 style={{
-                    fontSize: 15,
+                    fontSize: 13,
                     fontWeight: '900',
-                    color: 'black',
-                    
-                
+                    color: (category===item.text) ? 'white': 'black'
                 }}
             >
                 {item.text}
             </Text>
-            {(category===item.text)?<View style={{alignSelf:'center'}}><Text style={{color:'#465bd8',fontSize:30}}>.</Text></View>:''}
-            
             </TouchableOpacity>
             
         </View>

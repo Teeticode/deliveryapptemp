@@ -76,15 +76,13 @@ const CartComment =({restaurant,setwComment, wcomment})=>(
             <TouchableOpacity
                 onPress={()=>{setwComment('comment')}}
             >
-                <MaterialCommunityIcons name='chat' style={{fontSize:30, color:'lightgray', borderColor:'black'}}/>
+                <MaterialCommunityIcons name='chat' style={{fontSize:40, color:'lightgray', borderColor:'black'}}/>
             </TouchableOpacity>
-            {(wcomment==='comment')?<TextInput placeholder='Comment' value='' />:''}
+            {(wcomment===comment)?<TextInput placeholder='Comment' value='' style={{}}/>:''}
             
         </View>
-        
         <View>
-            {(wcomment==='comment')?<MaterialCommunityIcons name='cancel' style={{fontSize:30, color:'lightgray', borderColor:'black'}}/>:<MaterialCommunityIcons name='cart' style={{fontSize:30, color:'lightgray', borderColor:'black'}}/>}
-            
+            <MaterialCommunityIcons name='cart' style={{fontSize:40, color:'lightgray', borderColor:'black'}}/>
         </View>
     </View>
 )

@@ -53,7 +53,7 @@ export default function RestaurantItem({restaurantData}) {
             <View >
                 <ImageBox img={restaurant.restaurantImage} text={restaurant.name} />
                 <RestaurantInfo text={restaurant.name}/>
-                <CartComment restaurant={restaurant} setwComment={setwComment} wcomment={wcomment}/>
+                <CartComment restaurant={restaurant}/>
             </View>
             </TouchableOpacity>
         ))}
@@ -63,7 +63,7 @@ export default function RestaurantItem({restaurantData}) {
     
   )
 }
-const CartComment =({restaurant,setwComment, wcomment})=>(
+const CartComment =({restaurant})=>(
     <View
         style={{
             margin:20,
@@ -73,18 +73,13 @@ const CartComment =({restaurant,setwComment, wcomment})=>(
         }}
     >
         <View>
-            <TouchableOpacity
-                onPress={()=>{setwComment('comment')}}
-            >
-                <MaterialCommunityIcons name='chat' style={{fontSize:30, color:'lightgray', borderColor:'black'}}/>
+            <TouchableOpacity>
+                <MaterialCommunityIcons name='chat' style={{fontSize:40, color:'lightgray', borderColor:'black'}}/>
             </TouchableOpacity>
-            {(wcomment==='comment')?<TextInput placeholder='Comment' value='' />:''}
-            
+            <TextInput placeholder='Comment' value='' style={{}}/>
         </View>
-        
         <View>
-            {(wcomment==='comment')?<MaterialCommunityIcons name='cancel' style={{fontSize:30, color:'lightgray', borderColor:'black'}}/>:<MaterialCommunityIcons name='cart' style={{fontSize:30, color:'lightgray', borderColor:'black'}}/>}
-            
+            <MaterialCommunityIcons name='cart' style={{fontSize:40, color:'lightgray', borderColor:'black'}}/>
         </View>
     </View>
 )

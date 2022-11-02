@@ -38,9 +38,14 @@ const items = [
 ];
 
 export default function Categories() {
-    const [category, setCategory] = useState('Pick-up')
+    const [category, setCategory] = useState('')
     
-    
+    const pressCat = (item)=>{
+        setCategory(item.text)
+    }
+    useEffect(()=>{
+        pressCat()
+    },[category])
   return (
     <View
         style={{
@@ -57,9 +62,9 @@ export default function Categories() {
             <View
             style={{
                 alignItems:'center',
-                marginRight:6,
+                marginRight:10,
                 
-                marginLeft:5,
+                marginLeft:10,
                 borderRadius: 10,
                 padding: 10,
                 marginTop: 10,
@@ -77,28 +82,23 @@ export default function Categories() {
                 }}
             />**/}
             <TouchableOpacity
-                onPress={()=>{setCategory(item.text)}}
+                onPress={pressCat(item)}
                 style={{
-                    //backgroundColor: (category===item.text)? '#465bd8':'white',
+                    backgroundColor: (category===item.text)? 'black':'white',
                     borderRadius:20,
-                    paddingVertical: 6,
                     opacity:0.8,
+                    paddingVertical: 6,
                     paddingHorizontal: 16,
                 }}
             >
             <Text
                 style={{
-                    fontSize: 15,
-                    fontWeight: '900',
-                    color: 'black',
-                    
-                
+                    fontSize: 13,
+                    fontWeight: '900'
                 }}
             >
                 {item.text}
             </Text>
-            {(category===item.text)?<View style={{alignSelf:'center'}}><Text style={{color:'#465bd8',fontSize:30}}>.</Text></View>:''}
-            
             </TouchableOpacity>
             
         </View>

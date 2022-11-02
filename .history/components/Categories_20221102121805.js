@@ -90,15 +90,12 @@ export default function Categories() {
                 style={{
                     fontSize: 15,
                     fontWeight: '900',
-                    color: 'black',
-                    
-                
+                    color: 'black'
                 }}
             >
                 {item.text}
             </Text>
-            {(category===item.text)?<View style={{alignSelf:'center'}}><Text style={{color:'#465bd8',fontSize:30}}>.</Text></View>:''}
-            
+            <View style={{alignSelf:'center'}}><Text style={{color:'#465bd8',fontSize:30}}>.</Text></View>
             </TouchableOpacity>
             
         </View>

@@ -1,5 +1,5 @@
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native'
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import Colors from '../constants/Colors';
 const items = [
     {
@@ -38,9 +38,6 @@ const items = [
 ];
 
 export default function Categories() {
-    const [category, setCategory] = useState('Pick-up')
-    
-    
   return (
     <View
         style={{
@@ -57,16 +54,15 @@ export default function Categories() {
             <View
             style={{
                 alignItems:'center',
-                marginRight:6,
+                marginRight:30,
                 
-                marginLeft:5,
+                marginLeft:10,
                 borderRadius: 10,
                 padding: 10,
                 marginTop: 10,
                 marginBottom:10
             }}
             key={item.id}
-            
         >
             {/*<Image 
                 source={item.image} 
@@ -77,28 +73,21 @@ export default function Categories() {
                 }}
             />**/}
             <TouchableOpacity
-                onPress={()=>{setCategory(item.text)}}
                 style={{
-                    //backgroundColor: (category===item.text)? '#465bd8':'white',
+                    padding:7,
+                    backgroundColor: Colors.primary,
                     borderRadius:20,
-                    paddingVertical: 6,
-                    opacity:0.8,
-                    paddingHorizontal: 16,
+                    opacity:0.8
                 }}
             >
             <Text
                 style={{
-                    fontSize: 15,
-                    fontWeight: '900',
-                    color: 'black',
-                    
-                
+                    fontSize: 13,
+                    fontWeight: '900'
                 }}
             >
                 {item.text}
             </Text>
-            {(category===item.text)?<View style={{alignSelf:'center'}}><Text style={{color:'#465bd8',fontSize:30}}>.</Text></View>:''}
-            
             </TouchableOpacity>
             
         </View>

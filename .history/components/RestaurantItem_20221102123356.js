@@ -1,5 +1,5 @@
-import { View, Text, Image, TouchableOpacity, ScrollView, InputAccessoryView, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native'
+import React from 'react'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export const restaurants = [
@@ -30,7 +30,6 @@ export const restaurants = [
     },
 ]
 export default function RestaurantItem({restaurantData}) {
-    const [wcomment, setwComment] = useState('')
   return (
     
         <View 
@@ -53,7 +52,7 @@ export default function RestaurantItem({restaurantData}) {
             <View >
                 <ImageBox img={restaurant.restaurantImage} text={restaurant.name} />
                 <RestaurantInfo text={restaurant.name}/>
-                <CartComment restaurant={restaurant} setwComment={setwComment} wcomment={wcomment}/>
+                <CartComment restaurant={restaurant}/>
             </View>
             </TouchableOpacity>
         ))}
@@ -63,7 +62,7 @@ export default function RestaurantItem({restaurantData}) {
     
   )
 }
-const CartComment =({restaurant,setwComment, wcomment})=>(
+const CartComment =({restaurant})=>(
     <View
         style={{
             margin:20,
@@ -73,18 +72,10 @@ const CartComment =({restaurant,setwComment, wcomment})=>(
         }}
     >
         <View>
-            <TouchableOpacity
-                onPress={()=>{setwComment('comment')}}
-            >
-                <MaterialCommunityIcons name='chat' style={{fontSize:30, color:'lightgray', borderColor:'black'}}/>
-            </TouchableOpacity>
-            {(wcomment==='comment')?<TextInput placeholder='Comment' value='' />:''}
-            
+            <MaterialCommunityIcons name='chat'/>
         </View>
-        
         <View>
-            {(wcomment==='comment')?<MaterialCommunityIcons name='cancel' style={{fontSize:30, color:'lightgray', borderColor:'black'}}/>:<MaterialCommunityIcons name='cart' style={{fontSize:30, color:'lightgray', borderColor:'black'}}/>}
-            
+            <MaterialCommunityIcons name='cart'/>
         </View>
     </View>
 )

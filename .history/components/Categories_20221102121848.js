@@ -90,9 +90,7 @@ export default function Categories() {
                 style={{
                     fontSize: 15,
                     fontWeight: '900',
-                    color: 'black',
-                    
-                
+                    color: 'black'
                 }}
             >
                 {item.text}

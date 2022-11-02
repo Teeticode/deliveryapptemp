@@ -91,8 +91,7 @@ export default function Categories() {
                     fontSize: 15,
                     fontWeight: '900',
                     color: 'black',
-                    
-                
+                    shadowColor:'blue'
                 }}
             >
                 {item.text}

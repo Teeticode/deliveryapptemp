@@ -78,7 +78,7 @@ const CartComment =({restaurant,setwComment, wcomment})=>(
             >
                 <MaterialCommunityIcons name='chat' style={{fontSize:30, color:'lightgray', borderColor:'black'}}/>
             </TouchableOpacity>
-            {(wcomment==='comment')?<TextInput placeholder='Comment' value='' />:''}
+            {(wcomment==='comment')?<TextInput placeholder='Comment' value='' style={{}}/>:''}
             
         </View>
         
